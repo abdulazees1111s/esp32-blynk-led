@@ -1,18 +1,36 @@
-# ESP32 Blynk IoT – 3 LED Remote Control
+# ESP32 Blynk IoT – 3 LED Remote Control System
+
+---
 
 ## 📌 Project Overview
 
-This project demonstrates a basic Internet of Things (IoT) system using an ESP32 microcontroller and the Blynk IoT platform.
+This project demonstrates a basic Internet of Things (IoT) system using an ESP32 microcontroller and the Blynk IoT cloud platform.
 
-The system allows users to remotely control three LEDs (Red, Yellow, and Green) through the Blynk web dashboard or mobile application over WiFi.
+The system allows users to remotely control three LEDs (Red, Yellow, and Green) via the Blynk Web Dashboard or Mobile Application over WiFi.
+
+It showcases the integration of embedded systems, cloud computing, and wireless communication.
+
+---
+
+## 🖼️ Project Preview
+
+### 🔌 Circuit Diagram
+![Circuit Diagram](images/circuit.png)
+
+### ☁️ System Architecture
+![System Architecture](images/architecture.png)
+
+### 📱 Blynk Dashboard
+![Blynk Dashboard](images/dashboard.png)
 
 ---
 
 ## 🎯 Project Objectives
 
 - Understand IoT system architecture
-- Connect ESP32 to WiFi and Blynk Cloud
-- Control physical devices remotely
+- Connect ESP32 to WiFi
+- Integrate ESP32 with Blynk Cloud
+- Control hardware remotely via internet
 - Practice embedded C++ programming
 - Implement virtual pins and cloud communication
 
@@ -24,9 +42,9 @@ Smartphone / Web Dashboard
 ⬇  
 Blynk Cloud Server  
 ⬇  
-ESP32 (WiFi)  
+ESP32 (WiFi Connection)  
 ⬇  
-LEDs (GPIO Control)
+LEDs (GPIO Output Control)
 
 ---
 
@@ -47,6 +65,39 @@ LEDs (GPIO Control)
 | Red       | GPIO 13 |
 | Yellow    | GPIO 12 |
 | Green     | GPIO 14 |
+
+---
+
+## 🖥️ Programming Language
+
+- **C++ (Arduino Framework)**
+
+The project is written in Embedded C++ using the Arduino framework for ESP32.
+
+---
+
+## 📚 Libraries Used
+
+1. **Blynk Library**
+   - Connects ESP32 to Blynk Cloud
+   - Manages authentication and virtual pins
+   - Handles real-time communication
+
+2. **WiFi.h**
+   - Built-in ESP32 library
+   - Enables WiFi connectivity
+
+3. **WiFiClient.h**
+   - Handles TCP/IP communication with Blynk server
+
+---
+
+## 🛠️ Development Tools
+
+- Arduino IDE
+- ESP32 Board Package
+- Blynk IoT Platform
+- Wokwi Simulator (for testing and simulation)
 
 ---
 
@@ -73,20 +124,12 @@ LEDs (GPIO Control)
 
 ---
 
-## 💻 Software Requirements
-
-- Arduino IDE
-- ESP32 Board Package
-- Blynk Library (latest version)
-
----
-
 ## 🧠 How It Works
 
 1. ESP32 connects to WiFi.
 2. ESP32 authenticates with Blynk Cloud using an Auth Token.
-3. When a switch is toggled:
-   - Blynk sends a value to a Virtual Pin.
-   - `BLYNK_WRITE()` reads the value.
+3. When a switch is toggled in the dashboard:
+   - Blynk sends a value to the corresponding Virtual Pin.
+   - `BLYNK_WRITE()` function reads the value.
    - The corresponding LED turns ON or OFF.
-4. LED status can be sent back to the dashboard.
+4. LED status is displayed in the Serial Monitor.

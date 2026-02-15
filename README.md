@@ -151,8 +151,3 @@ The project is developed using Embedded C++ within the Arduino IDE environment.
 6. ESP32 turns the corresponding LED ON or OFF.
 7. Status is printed in Serial Monitor.
 
----
-
-## ⚠️ Error Encountered During Development
-
-### Error Message
